@@ -23,8 +23,12 @@ export const Link = styled(NavLink)`
 
 export const Button = styled.button`
   height: 48px;
-  width: 300px;
+  width: 100px;
   display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+  border: none;
 `;
 
 export const Message = styled.p`
