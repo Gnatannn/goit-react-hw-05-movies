@@ -21,11 +21,11 @@ const Movies = () => {
   useEffect(() => {
     const query = searchParams.get('query');
     if (query) {
-      getFindedFilms(query);
+      loadFindedFilms(query);
     }
   }, [searchParams]);
 
-  async function getFindedFilms(films) {
+  async function loadFindedFilms(films) {
     if (films === '') {
       return;
     }
@@ -46,7 +46,7 @@ const Movies = () => {
     }
 
     setSearchParams({ query: values.searchInput });
-    getFindedFilms(values.searchInput);
+    loadFindedFilms(values.searchInput);
   };
 
   return (
@@ -76,8 +76,11 @@ const Movies = () => {
         isFilmsLoaded && (
           <InfoMessage>We can't find this film, try again.</InfoMessage>
         )}
+      {findedFilms.length === 0 &&
+        searchParams.get('query') &&
+        isFilmsLoaded && <BackLink to="/">Go home</BackLink>}
+
       <MovieList movies={findedFilms} />
-      <BackLink to="/">Go home</BackLink>
     </MoviesContainer>
   );
 };
