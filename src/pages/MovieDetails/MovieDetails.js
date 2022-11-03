@@ -13,6 +13,8 @@ import {
   TextTitle,
   TextContent,
   Message,
+  AdditionalItem,
+  AdditionalList,
 } from './MovieDetails.styled';
 
 const MovieDetails = () => {
@@ -65,7 +67,24 @@ const MovieDetails = () => {
               {movie.genres.map(genre => genre.name).join(', ') || 'no genres'}
             </TextContent>
             <TextTitle>Additional information:</TextTitle>
-
+            <AdditionalList>
+              <AdditionalItem>
+                <StyledLink
+                  to={`/movies/${movieId}/cast`}
+                  state={{ from: backLink }}
+                >
+                  Cast
+                </StyledLink>
+              </AdditionalItem>
+              <AdditionalItem>
+                <StyledLink
+                  to={`/movies/${movieId}/reviews`}
+                  state={{ from: backLink }}
+                >
+                  Reviews
+                </StyledLink>
+              </AdditionalItem>
+            </AdditionalList>
             <Suspense fallback={<Message>Loading...</Message>}>
               <Outlet />
             </Suspense>

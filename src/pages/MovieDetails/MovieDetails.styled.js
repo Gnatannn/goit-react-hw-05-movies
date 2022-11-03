@@ -14,8 +14,8 @@ export const StyledLink = styled(NavLink)`
   color: black;
   font-size: 15px;
   font-weight: 700;
-  padding-top: 10px;
-  padding-left: 15px;
+  /* padding-top: 10px;
+  padding-left: 15px; */
   &.active {
     color: green;
   }
@@ -69,4 +69,20 @@ export const Message = styled.div`
   display: flex;
   align-items: baseline;
 `;
-// export const Message
+export const AdditionalList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 0px;
+`;
+
+export const AdditionalItem = styled.li`
+  width: 100px;
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+`;

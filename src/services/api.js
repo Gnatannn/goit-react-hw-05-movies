@@ -45,7 +45,7 @@ export const getCast = async id => {
 
 export const getReviews = async id => {
   try {
-    const response = await axios.get(`movie/${id}/review`, {
+    const response = await axios.get(`movie/${id}/reviews`, {
       params: {
         api_key: API_KEY,
       },
