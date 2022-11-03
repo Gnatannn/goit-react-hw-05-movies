@@ -18,7 +18,7 @@ const Reviews = () => {
   useEffect(() => {
     async function loadReviews(movieId) {
       try {
-        const response = API.getReviews(movieId);
+        const response = await API.getReviews(movieId);
         setReviews(response);
         setIsReviewsLoaded(true);
         // console.log(response);

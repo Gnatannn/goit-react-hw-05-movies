@@ -19,6 +19,7 @@ export const ReviewItem = styled.li`
   padding: 10px;
   border-radius: 10px;
   list-style: none;
+  margin-bottom: 10px;
 `;
 
 export const ReviewHeader = styled.p`
